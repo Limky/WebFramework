@@ -1,0 +1,81 @@
+package servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class DoLogin
+ */
+@WebServlet("/DoLogin")
+public class DoLogin extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public DoLogin() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+				//read form data
+				String ItemNumber = request.getParameter("ItemNumber");
+				String Description = request.getParameter("Description");
+				String PriceEach = request.getParameter("PriceEach");
+				
+				String FirstName = request.getParameter("FirstName");
+				String LastName = request.getParameter("LastName");
+				String MiddleInitial = request.getParameter("MiddleInitial");
+				String ShippingAddress = request.getParameter("ShippingAddress");
+				
+				String Card = request.getParameter("Card");
+				
+				String CreditCardNumber = request.getParameter("CreditCardNumber");
+				String RepeatCardNumber = request.getParameter("RepeatCardNumber");
+				
+				//perform a business logic
+			//	MiddleInitial="NO NULL";
+				
+				//Get response wirter
+				PrintWriter out = response.getWriter();
+				
+				//Build HTML code
+				String htmlResponse = "<html>";
+				htmlResponse +="<table border=4 cellpadding=2><tr><th bgcolor=#D27D32>Parameter Name</th><th bgcolor=#D27D32 width=70%>Parameter Value</th></tr>";
+				htmlResponse +="<tr><td>cardNum</td><td><ul><li>"+CreditCardNumber+"</li><li>"+RepeatCardNumber+"</li></ul></td></tr>";
+				htmlResponse +="<tr><td>cardType</td><td>"+Card+"</td></tr>";
+				htmlResponse +="<tr><td>price</td><td>"+PriceEach+"</td></tr>";
+				htmlResponse +="<tr><td>initial</td><td>"+MiddleInitial+"</td></tr>";
+				htmlResponse +="<tr><td>itemNum</td><td>"+ItemNumber+"</td></tr>";
+				htmlResponse +="<tr><td>address</td><td>"+ShippingAddress+"</td></tr>";
+				htmlResponse +="<tr><td>firstName</td><td>"+FirstName+"</td></tr>";
+				htmlResponse +="<tr><td>description</td><td>"+Description+"</td></tr>";
+				htmlResponse +="<tr><td>lastName</td><td>"+LastName+"</td></tr>";
+				
+				htmlResponse +="</table><br/></html>";
+				
+				out.println(htmlResponse);
+	
+	}
+
+	
+}
