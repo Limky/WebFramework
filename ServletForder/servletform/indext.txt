@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form action="DoLogin" method="post">
+	
+	Item Number: <input type="text" name="ItemNumber"><br/>
+	Description: <input type="text" name="Description"><br/>
+	Price Each: <input type="text" name="PriceEach"><br/>
+	
+	<hr>
+	
+	First Name: <input type="text" name="FirstName"><br/>
+	Last Name: <input type="text" name="LastName"><br/>
+	Middle Initial: <input type="text" name="MiddleInitial"><br/>
+	
+	ShippingAddress: <textarea rows="5" cols="30" name="ShippingAddress"></textarea><br/>
+	
+	Credit Card:<br/>
+	<input type="radio" name="Card" value="Visa"/>Visa<br/>
+	<input type="radio" name="Card" value="MasterCard"/>MasterCard<br/>
+	<input type="radio" name="Card" value="AmericanExpress"/>AmericanExpress<br/>
+	<input type="radio" name="Card" value="Discover"/>Discover<br/>
+	<input type="radio" name="Card" value="JavaSmartCard"/>JavaSmartCard<br/>
+
+	Credit Card Number: <input type="password" name="CreditCardNumber"/><br/>
+	Repeat Card Number: <input type="password" name="RepeatCardNumber"/><br/>
+	
+	<div align="right"><input type="submit" value="Submit Order"/>	</div>
+	
+	
+	
+
+	</form>
+
+
+</body>
+</html>
