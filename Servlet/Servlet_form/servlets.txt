@@ -46,21 +46,21 @@ public class DoLogin extends HttpServlet {
 				String LastName = request.getParameter("LastName");
 				String MiddleInitial = request.getParameter("MiddleInitial");
 				String ShippingAddress = request.getParameter("ShippingAddress");
-				
 				String Card = request.getParameter("Card");
 				
 				String CreditCardNumber = request.getParameter("CreditCardNumber");
 				String RepeatCardNumber = request.getParameter("RepeatCardNumber");
 				
 				//perform a business logic
-			//	MiddleInitial="NO NULL";
+				if(request.getParameter("MiddleInitial").isEmpty())MiddleInitial="No Value";
+				
 				
 				//Get response wirter
 				PrintWriter out = response.getWriter();
 				
 				//Build HTML code
-				String htmlResponse = "<html>";
-				htmlResponse +="<table border=4 cellpadding=2><tr><th bgcolor=#D27D32>Parameter Name</th><th bgcolor=#D27D32 width=70%>Parameter Value</th></tr>";
+				String htmlResponse = "<html><body bgcolor=#F5F5DC><h1 align=center>Reading All Request Parameters</h1>";
+				htmlResponse +="<table border=4 cellpadding=2 align=center><tr><th bgcolor=#D27D32>Parameter Name</th><th bgcolor=#D27D32 width=70%>Parameter Value</th></tr>";
 				htmlResponse +="<tr><td>cardNum</td><td><ul><li>"+CreditCardNumber+"</li><li>"+RepeatCardNumber+"</li></ul></td></tr>";
 				htmlResponse +="<tr><td>cardType</td><td>"+Card+"</td></tr>";
 				htmlResponse +="<tr><td>price</td><td>"+PriceEach+"</td></tr>";
@@ -71,7 +71,7 @@ public class DoLogin extends HttpServlet {
 				htmlResponse +="<tr><td>description</td><td>"+Description+"</td></tr>";
 				htmlResponse +="<tr><td>lastName</td><td>"+LastName+"</td></tr>";
 				
-				htmlResponse +="</table><br/></html>";
+				htmlResponse +="</table><br/></body></html>";
 				
 				out.println(htmlResponse);
 	
