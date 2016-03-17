@@ -4,7 +4,8 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 </head>
-<body>
+<body bgcolor="#F5F5DC">
+	<h1 align="center" bgcolor="#E6E6FA">A Sample Form</h1>
 
 	<form action="DoLogin" method="post">
 	
