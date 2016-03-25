@@ -1,0 +1,44 @@
+package util;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import beans.Customer;
+
+public class CustomerMap {
+
+	private Map<String,Customer> customers;
+	
+	public CustomerMap(){
+		
+		customers =new HashMap<String,Customer>();
+		
+		addCustomer (new Customer("id001","111","Alice"));
+		addCustomer (new Customer("id002","222","Bob"));
+		addCustomer (new Customer("id003","333","Charlie"));
+		
+		
+		
+	}
+
+	private void addCustomer(Customer customer) {
+	
+		customers.put(customer.getId(), customer);
+	}
+
+	public Customer findCustomer(String id){
+		
+		if(id!=null){
+			
+			return(customers.get(id.toLowerCase()));
+			
+		}else{
+			return(null);
+			
+		}
+		
+	}
+	
+
+}
+
